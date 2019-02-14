@@ -201,7 +201,33 @@ JS SDK要包含全部的业务逻辑，但是不包含具体样式，由下游�
 2.render: 渲染
 3.event: 事件绑定
 
+### 注：
+in .babelrc
+'transform-runtime':运行时候看看有没有ES6，然后进行处理
+'env': 用来取代babel-preset-es2015, latest 等等，
+'modules': 默认值是commonjs, 设为false不经转化，就是将es6模块化转化为commonjs模块化
 
+in webpack.config.js
+'ModuleConcatenationPlugin': webpack默认把每个模块放到一个函数里面，但是性能不好，使用该模块，如果使用了es6会放到同一个闭包里面来提升性能。
+// 使用多种调用方式
+        output: {
+            library: 'pass',
+            libraryTarget: 'umd'
+        },
+可以让项目进行多种方式的引用，考不哦cmd amd commonjs 模块化。
+
+in webpack.dll.js
+'const vendors = [
+  'es5-shim',
+  'babel-polyfill',
+  'fetch-detector',
+  'fetch-ie8',
+  'es6-promise/auto'
+];' 静态打包依赖，不需要处理
+
+in html-bundle.config.js
+'var fileInclude = require('gulp-file-include');
+': 处理页面的公共部分，例如header footer.
 
 
 

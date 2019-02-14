@@ -57,6 +57,11 @@ var commonConf = {
 
 var webpackConf = {
     dev: {
+        // 使用多种调用方式
+        output: {
+            library: 'pass',
+            libraryTarget: 'umd'
+        },
         devtool: "inline-source-map",  //生成sourcemap,便于开发调试
         //devtool: "cheap-eval-source-map",  //快速打包
         cache: true,
@@ -75,6 +80,11 @@ var webpackConf = {
     },
 
     dest: {
+        // 使用多种调用方式
+        output: {
+            library: 'pass',
+            libraryTarget: 'umd'
+        },
         devtool: false,
         cache: false,
         plugins: [

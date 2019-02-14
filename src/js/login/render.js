@@ -1,10 +1,9 @@
 
-export default (container) => {
-	const tpl = `<form id='form'>
-		<input id='input' name='username' type='text' />
-		<input name='password' type='password' />
-		<input id='submit' value='Login' type='submit' />
-	</form>`
+// template
+const template = (opts = {}) => {
+	return '<div>hello</div>'
+}
 
-	container.innerHTML = tpl;
+export default (conf = {}) => {
+	conf.container.innerHTML = template(conf);
 }
