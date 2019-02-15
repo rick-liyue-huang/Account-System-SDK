@@ -3,7 +3,7 @@
 import '../common/polyfill.js';
 import render from './render.js';
 import bindEvent from './event.js';
-import _ from 'lodash';
+// import _ from 'lodash';
 
 // 给出默认值，防止客户自己输入错误的形式
 const login = (opts = {}) => {
