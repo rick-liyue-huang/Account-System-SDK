@@ -16,6 +16,7 @@
     "es6-promise": "^4.2.5",
     "fetch-detector": "^1.0.1",
     "fetch-ie8": "^1.5.0",
+    "fetch-mock": "^7.3.0",
     "file-loader": "^0.9.0",
     "gulp-file-include": "^2.0.1",
     "happypack": "^4.0.0",
