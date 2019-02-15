@@ -10,7 +10,12 @@ const login = (opts = {}) => {
 	
 	// 默认值
 	const defaultOpts = {
-		loginBtnText: 'Login'
+		loginBtnText: 'Login',
+		accountPlaceholder: 'mobile/email/accountnumber',
+		passwordPlaceholder: 'type password',
+		accountLabel: '',
+		passwordLabel: '',
+		showRemember: ''
 	};
 	// 用户传入的值，且用户输入值优先,进行merge
 	const options = Object.assign(defaultOpts, opts);
