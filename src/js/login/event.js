@@ -1,4 +1,10 @@
 
+/*
+	set all events here, 
+	firstly, get all elements by getId method,
+	secondly, set form-check method,
+	last, complete logic application
+ */
 import { getId as $ } from '../common/utils.js';
 import { fetchPost } from '../common/fetch.js';
 import { check } from '../common/form-check.js';
@@ -22,13 +28,16 @@ export default (opts = {}) => {
 		
 		const checkResults = check($loginForm);
 		console.log(checkResults);
+		// if has not any error message results
 		if(!checkResults.length) {
 
+			// set remember for furture
 			let remember = '0';
 			if($remember.getAttribute('checked')) {
 				remember = '1';
 			}
 
+			// async / await
 			const data = await fetchPost('/login', {
 				account: $account.value,
 				password: $password.value,

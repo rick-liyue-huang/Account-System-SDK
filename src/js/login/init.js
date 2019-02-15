@@ -1,23 +1,27 @@
 
-// 初始化
+/*
+	all the component includes: init.js, render.js and event.js.
+	init.js is the main entry.
+ */
+// 
 import '../common/polyfill.js';
 import render from './render.js';
 import bindEvent from './event.js';
 // import _ from 'lodash';
 
-// 给出默认值，防止客户自己输入错误的形式
+// given the default user setting value style.
 const login = (opts = {}) => {
 	
-	// 默认值
+	// default value for some opts object
 	const defaultOpts = {
 		loginBtnText: 'Login',
 		accountPlaceholder: 'mobile/email/accountnumber',
 		passwordPlaceholder: 'type password',
-		accountLabel: '',
-		passwordLabel: '',
+		accountLabel: 'user',
+		passwordLabel: 'pw',
 		showRemember: ''
 	};
-	// 用户传入的值，且用户输入值优先,进行merge
+	// merge defaultOpts and user opts, and prefer for user opts
 	const options = Object.assign(defaultOpts, opts);
 	// const options = _.assign(defaultOpts, opts);
 	/*const d = Symbol('d');
@@ -31,6 +35,7 @@ export { login }
 // export const login =...
 // module.exports = login;
 // export default login
+
 
 
 

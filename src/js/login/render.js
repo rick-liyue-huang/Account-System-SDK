@@ -1,18 +1,22 @@
-
+/*
+	the render file provide the template for the component of 'login'
+ */
 import { getId } from '../common/utils.js';
 // template
 const template = (opts = {}) => {
 
+	// set the autocompleteTpl 
 	const autocompleteTpl = `
 		<div id='no-autocomplete'>
 			<input type='text' />
 			<input type='password' />
 		</div>`;
 
+	// user can set 'opts.autocomplete' in 'login.html' to show autocompleteTpl
 	const autocompleteAdapter = opts.autocomplete ? '' : autocompleteTpl;
 
 	const autocompleteValue = opts.autocomplete ? 'on' : 'off';
-
+	// user can set 'showRemember' to display 'login-remember-wrapper' component
 	const showRemember = opts.showRemember ? 'block' : 'none';
 
 	const tpl = `
@@ -53,6 +57,7 @@ export default (conf = {}) => {
 	// document.getElementById('login-wrapper')
 	conf.container.innerHTML = template(conf);
 	const $noAutocomplete = getId('no-autocomplete');
+	// when noAutocomplete exist, set as invisible
 	if($noAutocomplete) {
 		$noAutocomplete.style.opacity = '0';
 		$noAutocomplete.style.height = '0';
