@@ -14,6 +14,10 @@ FetchMock.mock('/login', (url, opts) => {
 	} else {
 		return { code: 400, message: 'username wrong' };
 	}
+});
+
+FetchMock.mock('/getMobileVerifyToken', (url, opts) => {
+	return {code: 200, message: 'success', getMobileVerifyToken: '12345668'}
 })
 
 
